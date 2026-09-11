@@ -1,9 +1,6 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $palavra = $_POST['palavra'];
-}
 
 ?>
 
@@ -28,9 +25,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form><br>
         <?php
-            echo "<h3>Em maiúsculo: " . strtoupper($palavra) . "</h3>"; 
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $palavra = $_POST['palavra'];
+
+            echo "<h3>Em maiúsculo: " . strtoupper($palavra) . "</h3>";
             echo "<h3>Em minúsculo: " . strtolower($palavra) . "</h3>";
+            }
         ?>
+        <a href="index.html">Retornar ao início</a>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     </div>
 </body>
