@@ -1,3 +1,12 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $palavra = $_POST['palavra'];
+}
+
+?>
+
 <!doctype html>
 <html lang="pt-BR">
 
@@ -10,7 +19,7 @@
 
 <body>
     <div class="container py-3">
-        <h1>Exercício 1 - NÚMERO DE CARACTERES</h1>
+        <h1>Exercício 2 - MAIÚSCULO E MINÚSCULO</h1>
         <form method="post">
             <div class="mb-3">
                 <label for="palavra" class="form-label">Digite uma palavra</label>
@@ -19,13 +28,9 @@
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form><br>
         <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-            $palavra = $_POST['palavra'];
-            echo "<h3>$palavra tem " . strlen($palavra) . " caracteres</h3>";
-        }
+            echo "<h3>Em maiúsculo: " . strtoupper($palavra) . "</h3>"; 
+            echo "<h3>Em minúsculo: " . strtolower($palavra) . "</h3>";
         ?>
-        <a href="index.html">Retornar ao início</a>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     </div>
 </body>
