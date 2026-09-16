@@ -41,26 +41,110 @@
                 $data = "$dia-$mes-$ano";
                 $data = date('d/m/Y', strtotime($data));
 
+                function DataCorreta(string $data)
+                {
+                    echo "<h4>Data correta</h4>";
+                    echo "<h4>$data</h4>";
+                }
+
+                function VerificarMes(int $dia, string $mes)
+                {
+                    echo "<h4>Data inválida</h4>";
+                    echo "<h4>Motivo: $mes só possui $dia dias</h4>";
+                }
+
                 switch ($mes) {
-                    case '1':
+                    case '1': // Janeiro
                         if ($dia > 31) {
-                            echo "<h4>Data inválida</h4>";
-                            echo "<h4>Motivo: Janeiro só possui 31 dias</h4>";
-                        } else {
-                            echo "<h4>Data correta</h4>";
-                            echo "<h4>$data</h4>";
-                        }
+                            VerificarMes(31, "Janeiro");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '2': // Fevereiro
+                        if ($dia > 28) {
+                            VerificarMes(28, "Fevereiro");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '3': // Março
+                        if ($dia > 31) {
+                            VerificarMes(31, "Março");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '4': // Abril
+                        if ($dia > 30) {
+                            VerificarMes(30, "Abril");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '5': // Maio
+                        if ($dia > 31) {
+                            VerificarMes(31, "Maio");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '6': // Junho
+                        if ($dia > 30) {
+                            VerificarMes(30, "Junho");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '7': // Julho
+                        if ($dia > 31) {
+                            VerificarMes(31, "Julho");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '8': // Agosto
+                        if ($dia > 31) {
+                            VerificarMes(31, "Agosto");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '9': // Setembro
+                        if ($dia > 30) {
+                            VerificarMes(30, "Setembro");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '10': // Outubro
+                        if ($dia > 31) {
+                            VerificarMes(31, "Outubro");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '11': // Novembro
+                        if ($dia > 30) {
+                            VerificarMes(30, "Novembro");
+                        } else
+                            DataCorreta($data);
+                        break;
+
+                    case '12': // Dezembro
+                        if ($dia > 31) {
+                            VerificarMes(31, "Dezembro");
+                        } else
+                            DataCorreta($data);
                         break;
 
                     default:
-                        # code...
+                        echo "<h4>Data incorreta</h4>";
+                        echo "<h4>Motivo: Mês digitado não existe</h4>";
                         break;
                 }
             }
         }
-
-
-
         ?>
         <br>
         <a href="index.html">Retornar ao início</a>
