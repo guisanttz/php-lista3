@@ -11,10 +11,10 @@
 <body>
     <div class="container py-3">
         <h1>Exercício 6 - Número Arredondado</h1>
-        <form method="post">
+        <form method="post" action="exercicio6.php">
             <div class="mb-3">
                 <label for="valor" class="form-label">Digite um valor decimal</label>
-                <input type="number" step="0.01" inputmode="decimal" class="form-control">
+                <input type="number" step="0.01" inputmode="decimal" name="valor" class="form-control">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
@@ -25,9 +25,10 @@
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-            $valor = (int) $_POST['valor'];
-            echo "<h4>Arredondado para cima: " .  . "</h4>";
-
+            $valor = $_POST['valor'];
+            echo "<h4>Arredondado para cima: " . ceil($valor) . "</h4>"; // Arredonda para cima
+            echo "<h4>Arredondado para baixo: " . floor($valor) . "</h4>"; // Arredonda para baixo
+            echo "<h4>Arredondado normalmente: " . round($valor) . "</h4>"; // Arredonda normalmente
         }
 
         ?>
